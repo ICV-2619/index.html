@@ -1064,7 +1064,7 @@ let resumen = XLSX.utils.aoa_to_sheet(resumenData);
  const blob = new Blob(["\\ufeff" + csv], {type: "text/csv;charset=utf-8;"});
  const a = document.createElement("a");
  a.href = URL.createObjectURL(blob);
- a.download = "Encuesta_Manhattan_2026_v10_resultados.csv";
+ a.download = "Encuesta_Manhattan_2026_v9_resultados.csv";
  a.click();
 
  alert(currentLanguage === "es"
