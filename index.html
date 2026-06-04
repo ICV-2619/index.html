@@ -37,6 +37,36 @@
             text-align: center;
         }
 
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 13px;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: #003b70;
+            border-color: white;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
         .header h1 {
             font-size: 28px;
             margin-bottom: 10px;
@@ -53,6 +83,7 @@
 
         .content {
             padding: 40px;
+            position: relative;
         }
 
         .intro-text {
@@ -60,6 +91,10 @@
             margin-bottom: 30px;
             line-height: 1.6;
             font-size: 15px;
+        }
+
+        .intro-text.hidden {
+            display: none;
         }
 
         .documents {
@@ -157,28 +192,46 @@
             .documents {
                 grid-template-columns: 1fr;
             }
+
+            .language-switcher {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="content" style="padding: 0; border-bottom: 1px solid #d8dee6;">
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="switchLanguage('es')">Español</button>
+                <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+            </div>
+        </div>
+
         <div class="header">
-            <h1>📊 Evaluación SAT-2026</h1>
-            <p>Encuestas de Satisfacción - Manhattan Abrasives</p>
+            <h1 id="title">📊 Evaluación SAT-2026</h1>
+            <p id="subtitle">Encuestas de Satisfacción - Manhattan Abrasives</p>
         </div>
 
         <div class="content">
-            <div class="intro-text">
+            <div class="intro-text" id="intro-es">
                 <strong>Bienvenido.</strong> A continuación encontrará la encuesta de evaluación de satisfacción de clientes. 
                 Seleccione el documento que desee completar:
+            </div>
+
+            <div class="intro-text hidden" id="intro-en">
+                <strong>Welcome.</strong> Below you will find the customer satisfaction evaluation survey. 
+                Select the document you wish to complete:
             </div>
 
             <div class="documents">
                 <a href="Manhattan Abrasives-ESC_2026.html" class="doc-card">
                     <div class="icon">🎯</div>
-                    <h3>Manhattan Abrasives ESC 2026</h3>
-                    <p>Evaluación especializada de satisfacción con análisis completo de experiencia del cliente.</p>
-                    <span class="button">Abrir Encuesta →</span>
+                    <h3 id="survey-title">Manhattan Abrasives ESC 2026</h3>
+                    <p id="survey-desc">Evaluación especializada de satisfacción con análisis completo de experiencia del cliente.</p>
+                    <span class="button" id="survey-btn">Abrir Encuesta →</span>
                 </a>
             </div>
 
@@ -191,5 +244,52 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const translations = {
+            es: {
+                title: "📊 Evaluación SAT-2026",
+                subtitle: "Encuestas de Satisfacción - Manhattan Abrasives",
+                intro: "<strong>Bienvenido.</strong> A continuación encontrará la encuesta de evaluación de satisfacción de clientes. Seleccione el documento que desee completar:",
+                surveyTitle: "Manhattan Abrasives ESC 2026",
+                surveyDesc: "Evaluación especializada de satisfacción con análisis completo de experiencia del cliente.",
+                surveyBtn: "Abrir Encuesta →"
+            },
+            en: {
+                title: "📊 SAT-2026 Evaluation",
+                subtitle: "Satisfaction Surveys - Manhattan Abrasives",
+                intro: "<strong>Welcome.</strong> Below you will find the customer satisfaction evaluation survey. Select the document you wish to complete:",
+                surveyTitle: "Manhattan Abrasives ESC 2026",
+                surveyDesc: "Specialized satisfaction evaluation with comprehensive customer experience analysis.",
+                surveyBtn: "Open Survey →"
+            }
+        };
+
+        function switchLanguage(lang) {
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update intro text visibility
+            document.getElementById('intro-es').classList.toggle('hidden', lang !== 'es');
+            document.getElementById('intro-en').classList.toggle('hidden', lang !== 'en');
+
+            // Update all text elements
+            document.getElementById('title').textContent = translations[lang].title;
+            document.getElementById('subtitle').textContent = translations[lang].subtitle;
+            document.getElementById('survey-title').textContent = translations[lang].surveyTitle;
+            document.getElementById('survey-desc').textContent = translations[lang].surveyDesc;
+            document.getElementById('survey-btn').textContent = translations[lang].surveyBtn;
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference on page load
+        window.addEventListener('load', function() {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'es';
+            switchLanguage(savedLang);
+        });
+    </script>
 </body>
 </html>
