@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/ivan.MANHATTAN/Downloads/index%20(3).html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta Manhattan 2026 v9 | Manhattan Abrasives</title>
+<style>
+    :root {
+      --blue: #003b70;
+      --blue-dark: #002f5d;
+      --red: #d71920;
+      --green: #16803c;
+      --border: #d8dee6;
+      --text: #002b55;
+      --light: #f7f9fc;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #eef2f6;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 25px auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 260px 1fr 230px;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .logo-box {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .logo-box img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+    }
+
+    .title-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--blue-dark);
+      font-size: 23px;
+      line-height: 1.2;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .meta-box {
+      padding: 16px 18px;
+      border-left: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+
+    .meta-box p { margin: 0 0 7px; }
+
+    .language-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .language-buttons button {
+      border: 1px solid var(--blue);
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 700;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .language-buttons button.active {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .rating-bar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 9px 18px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    form { padding: 22px; }
+
+    .company-section {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+    }
+
+    label.company-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      max-width: 480px;
+      padding: 12px;
+      border: 1px solid #bfc7d1;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .section { margin: 18px 0 28px; }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 230px;
+      align-items: center;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 4px;
+      overflow: hidden;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      padding: 11px 14px;
+      font-size: 13px;
+    }
+
+    .scale-header {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      text-align: center;
+      font-size: 13px;
+      column-gap: 16px;
+      padding-right: 6px;
+    }
+
+    .scale-header span { padding: 11px 0; }
+
+    .question-row {
+      display: grid;
+      grid-template-columns: 1fr 230px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      min-height: 50px;
+    }
+
+    .question-text {
+      padding: 12px 0;
+      line-height: 1.35;
+    }
+
+    .answers {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 16px;
+      text-align: center;
+      align-items: center;
+      padding-right: 6px;
+    }
+
+    .answers label {
+      min-width: 28px;
+      min-height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--blue);
+      cursor: pointer;
+    }
+
+    .choice-row {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+
+    .choice-title { margin-bottom: 10px; }
+
+    .choice-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .choice-options label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 90px;
+      padding: 12px;
+      border: 1px solid #bfc7d1;
+      border-radius: 4px;
+      resize: vertical;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    .text-question { margin: 14px 0 18px; }
+
+    .text-question p {
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    .instructions {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border: 1px solid #9ad4ad;
+      background: #eaf8ef;
+      color: var(--green);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .action-box {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .action-box button {
+      border: none;
+      border-radius: 6px;
+      padding: 14px 26px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .pdf-button {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .submit-button {
+      background: var(--red);
+      color: var(--white);
+    }
+    .footer-contact {
+      margin: 28px 22px 22px;
+      padding: 22px;
+      border-top: 2px solid var(--blue);
+      text-align: center;
+      background: var(--light);
+      color: var(--blue);
+      line-height: 1.8;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+
+    .footer-contact h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: var(--blue-dark);
+    }
+
+    .pdf-only {
+      display: none;
+    }
+@media (max-width: 760px) {
+      .page {
+        margin: 0;
+        border-radius: 0;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-box,
+      .meta-box {
+        border: none;
+      }
+
+      .meta-box {
+        border-top: 1px solid var(--border);
+      }
+
+      .section-header,
+      .question-row {
+        grid-template-columns: 1fr;
+      }
+
+      .scale-header,
+      .answers {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 340px;
+        margin-left: auto;
+        column-gap: 18px;
+      }
+
+      .question-text { padding-bottom: 6px; }
+      .answers { padding-bottom: 12px; }
+    }
+
+.progress-container{margin:15px 0;padding:10px;background:#f7f9fc;border:1px solid #d8dee6;border-radius:6px}
+.progress-bar{height:18px;background:#003b70;width:0%;border-radius:4px;transition:.3s}
+.progress-text{text-align:center;font-weight:700;margin-bottom:8px}
+
+.success-message{
+background:#eaf8ef;
+}
+
+
+    .score-box {
+      margin: 22px 0;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fbfcfe;
+      text-align: center;
+    }
+
+    .score-box h3 {
+      margin: 0 0 10px;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    .score-main {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--blue);
+      margin: 8px 0;
+    }
+
+    .stars {
+      font-size: 24px;
+      color: #d71920;
+      letter-spacing: 3px;
+      margin-top: 8px;
+    }
+
+    .nps-options {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .nps-options label {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 2px;
+      text-align: center;
+      cursor: pointer;
+      background: #ffffff;
+      font-weight: 700;
+    }
+
+    .nps-options input {
+      display: block;
+      margin: 0 auto 5px;
+    }
+
+    
+
+    @media (max-width: 760px) {
+      .nps-options {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .signature-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+</style>
+  <script src="./Encuesta Manhattan 2026 v9 _ Manhattan Abrasives_files/xlsx.full.min.js.descarga"></script>
+</head>
+
+<body>
+  <div class="page" id="surveyDocument">
+    <header>
+      <div class="logo-box">
+        <img src="data:image/png;base64,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" alt="Manhattan Abrasives">
+      </div>
+
+      <div class="title-box">
+        <h1 data-i18n="mainTitle">EVALUACIÓN DE SATISFACCIÓN DE CLIENTES</h1>
+      </div>
+
+      <div class="meta-box">
+        <p><strong data-i18n="dateLabel">Fecha:</strong> <span id="currentDate">4/6/2026</span></p>
+        <p><strong data-i18n="timeLabel">Hora:</strong> <span id="currentTime">13:13:58</span></p>
+<p><strong data-i18n="revisionLabel">Revisión:</strong> 1</p>
+
+        <div class="language-buttons">
+          <button type="button" id="btn-es" class="active" onclick="setLanguage(&#39;es&#39;)">ES</button>
+          <button type="button" id="btn-en" onclick="setLanguage(&#39;en&#39;)">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="rating-bar" data-i18n="ratingText">Valoración: 1 = Muy insatisfecho | 2 = Insatisfecho | 3 = Neutral | 4 = Satisfecho | 5 = Muy satisfecho</div>
+
+    <div class="progress-container">
+      <div class="progress-text">Progreso: <span id="progressPercent">0%</span></div>
+      <div style="background:#ddd;border-radius:4px;">
+        <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <form id="surveyForm" action="https://formspree.io/f/mzdwnarw" method="POST">
+      
+        <input type="hidden" name="_subject" value="Nueva Encuesta Manhattan 2026">
+        <input type="hidden" name="_replyto" value="info@manhattanabrasives.com">
+        <input type="hidden" name="formspree_endpoint" value="https://formspree.io/f/mzdwnarw">
+
+      <section class="company-section">
+        <label class="company-label" for="company">
+          <span data-i18n="companyLabel">Su empresa</span> *
+        </label>
+        <input type="text" id="company" name="company" data-i18n-placeholder="companyPlaceholder" placeholder="Nombre de su empresa" required="">
+      </section>
+
+      <section class="section">
+        <div class="section-header"><div class="section-title" data-i18n="qualityTitle">CALIDAD DE PRODUCTO</div><div class="scale-header"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q1">¿Cómo valora la calidad de nuestros productos abrasivos?</div><div class="answers"><label><input type="radio" name="quality_1" value="1" required=""></label><label><input type="radio" name="quality_1" value="2"></label><label><input type="radio" name="quality_1" value="3"></label><label><input type="radio" name="quality_1" value="4"></label><label><input type="radio" name="quality_1" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q2">¿Cómo valora el rendimiento y duración de los productos?</div><div class="answers"><label><input type="radio" name="quality_2" value="1" required=""></label><label><input type="radio" name="quality_2" value="2"></label><label><input type="radio" name="quality_2" value="3"></label><label><input type="radio" name="quality_2" value="4"></label><label><input type="radio" name="quality_2" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q3">¿Los productos cumplen sus expectativas técnicas?</div><div class="answers"><label><input type="radio" name="quality_3" value="1" required=""></label><label><input type="radio" name="quality_3" value="2"></label><label><input type="radio" name="quality_3" value="3"></label><label><input type="radio" name="quality_3" value="4"></label><label><input type="radio" name="quality_3" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q4">¿Cómo valora la relación calidad-precio?</div><div class="answers"><label><input type="radio" name="quality_4" value="1" required=""></label><label><input type="radio" name="quality_4" value="2"></label><label><input type="radio" name="quality_4" value="3"></label><label><input type="radio" name="quality_4" value="4"></label><label><input type="radio" name="quality_4" value="5"></label></div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-header"><div class="section-title" data-i18n="serviceTitle">ATENCIÓN Y SERVICIO</div><div class="scale-header"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q5">¿Cómo valora la atención comercial recibida?</div><div class="answers"><label><input type="radio" name="sales_1" value="1" required=""></label><label><input type="radio" name="sales_1" value="2"></label><label><input type="radio" name="sales_1" value="3"></label><label><input type="radio" name="sales_1" value="4"></label><label><input type="radio" name="sales_1" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q6">¿Cómo valora la asistencia técnica ofrecida?</div><div class="answers"><label><input type="radio" name="sales_2" value="1" required=""></label><label><input type="radio" name="sales_2" value="2"></label><label><input type="radio" name="sales_2" value="3"></label><label><input type="radio" name="sales_2" value="4"></label><label><input type="radio" name="sales_2" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q7">¿Cómo valora la rapidez de respuesta ante consultas?</div><div class="answers"><label><input type="radio" name="sales_3" value="1" required=""></label><label><input type="radio" name="sales_3" value="2"></label><label><input type="radio" name="sales_3" value="3"></label><label><input type="radio" name="sales_3" value="4"></label><label><input type="radio" name="sales_3" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q8">¿Cómo valora el servicio ofrecido en nuestra página web?</div><div class="answers"><label><input type="radio" name="sales_4" value="1" required=""></label><label><input type="radio" name="sales_4" value="2"></label><label><input type="radio" name="sales_4" value="3"></label><label><input type="radio" name="sales_4" value="4"></label><label><input type="radio" name="sales_4" value="5"></label></div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-header"><div class="section-title" data-i18n="logisticsTitle">LOGÍSTICA Y ENTREGAS</div><div class="scale-header"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q9">¿Cómo valora nuestros plazos de entrega?</div><div class="answers"><label><input type="radio" name="logistics_1" value="1" required=""></label><label><input type="radio" name="logistics_1" value="2"></label><label><input type="radio" name="logistics_1" value="3"></label><label><input type="radio" name="logistics_1" value="4"></label><label><input type="radio" name="logistics_1" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q10">¿Cómo valora la disponibilidad de stock?</div><div class="answers"><label><input type="radio" name="logistics_2" value="1" required=""></label><label><input type="radio" name="logistics_2" value="2"></label><label><input type="radio" name="logistics_2" value="3"></label><label><input type="radio" name="logistics_2" value="4"></label><label><input type="radio" name="logistics_2" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q11">¿Los pedidos llegan completos y correctamente?</div><div class="answers"><label><input type="radio" name="logistics_3" value="1" required=""></label><label><input type="radio" name="logistics_3" value="2"></label><label><input type="radio" name="logistics_3" value="3"></label><label><input type="radio" name="logistics_3" value="4"></label><label><input type="radio" name="logistics_3" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q12">¿Cómo valora la resolución de incidencias?</div><div class="answers"><label><input type="radio" name="logistics_4" value="1" required=""></label><label><input type="radio" name="logistics_4" value="2"></label><label><input type="radio" name="logistics_4" value="3"></label><label><input type="radio" name="logistics_4" value="4"></label><label><input type="radio" name="logistics_4" value="5"></label></div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-header"><div class="section-title" data-i18n="experienceTitle">EXPERIENCIA DEL CLIENTE</div><div class="scale-header"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q13">¿Le resultó fácil realizar su pedido?</div><div class="answers"><label><input type="radio" name="experience_1" value="1" required=""></label><label><input type="radio" name="experience_1" value="2"></label><label><input type="radio" name="experience_1" value="3"></label><label><input type="radio" name="experience_1" value="4"></label><label><input type="radio" name="experience_1" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q14">¿La resolución de problemas fue rápida y sencilla?</div><div class="answers"><label><input type="radio" name="experience_2" value="1" required=""></label><label><input type="radio" name="experience_2" value="2"></label><label><input type="radio" name="experience_2" value="3"></label><label><input type="radio" name="experience_2" value="4"></label><label><input type="radio" name="experience_2" value="5"></label></div></div>
+        <div class="question-row"><div class="question-text" data-i18n="q15">¿Su incidencia quedó resuelta en el primer contacto?</div><div class="answers"><label><input type="radio" name="experience_3" value="1" required=""></label><label><input type="radio" name="experience_3" value="2"></label><label><input type="radio" name="experience_3" value="3"></label><label><input type="radio" name="experience_3" value="4"></label><label><input type="radio" name="experience_3" value="5"></label></div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-header"><div class="section-title" data-i18n="loyaltyTitle">FIDELIZACIÓN</div><div class="scale-header"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div>
+        <div class="choice-row nps-row">
+          <div class="choice-title" data-i18n="q16">¿Qué probabilidad hay de que recomiende MANHATTAN ABRASIVES a otra empresa?</div>
+          <div class="nps-options">
+            <label><input type="radio" name="loyalty_1" value="0" required="">0</label>
+            <label><input type="radio" name="loyalty_1" value="1" required="">1</label>
+            <label><input type="radio" name="loyalty_1" value="2" required="">2</label>
+            <label><input type="radio" name="loyalty_1" value="3" required="">3</label>
+            <label><input type="radio" name="loyalty_1" value="4" required="">4</label>
+            <label><input type="radio" name="loyalty_1" value="5" required="">5</label>
+            <label><input type="radio" name="loyalty_1" value="6" required="">6</label>
+            <label><input type="radio" name="loyalty_1" value="7" required="">7</label>
+            <label><input type="radio" name="loyalty_1" value="8" required="">8</label>
+            <label><input type="radio" name="loyalty_1" value="9" required="">9</label>
+            <label><input type="radio" name="loyalty_1" value="10" required="">10</label>
+          </div>
+        </div>
+        <div class="choice-row"><div class="choice-title" data-i18n="q17">¿Continuará trabajando con ABRASIVOS MANHATTAN?</div><div class="choice-options"><label><input type="radio" name="loyalty_continue" value="yes" required=""><span data-i18n="yes">Sí</span></label><label><input type="radio" name="loyalty_continue" value="probably"><span data-i18n="probably">Probablemente</span></label><label><input type="radio" name="loyalty_continue" value="no"><span data-i18n="no">No</span></label></div></div>
+        <div class="choice-row"><div class="choice-title" data-i18n="q18">¿Volvería a comprar nuestros productos?</div><div class="choice-options"><label><input type="radio" name="loyalty_buy_again" value="yes" required=""><span data-i18n="yes">Sí</span></label><label><input type="radio" name="loyalty_buy_again" value="probably"><span data-i18n="probably">Probablemente</span></label><label><input type="radio" name="loyalty_buy_again" value="no"><span data-i18n="no">No</span></label></div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-header"><div class="section-title" data-i18n="opinionTitle">OPINIÓN DEL CLIENTE</div><div></div></div>
+        <div class="text-question"><p data-i18n="q19">¿Qué productos o servicios adicionales le gustaría que ofreciéramos?</p><textarea name="additional_products"></textarea></div>
+        <div class="text-question"><p data-i18n="q20">Comentarios adicionales</p><textarea name="comments"></textarea></div>
+      </section>
+
+      <section class="score-box">
+        <h3 data-i18n="scoreTitle">Índice de satisfacción global</h3>
+        <div class="score-main"><span id="satisfactionScore">0</span>%</div>
+        <div><span id="averageScore">0.0</span> / 5</div>
+        <div class="stars" id="scoreStars">☆☆☆☆☆</div>
+      </section>
+
+      
+
+      <section class="instructions">
+        <strong data-i18n="instructionsTitle">INSTRUCCIONES</strong>
+        <p data-i18n="instructionsText">Rellene el formulario. Puede pulsar GUARDAR EN PDF antes de enviar la encuesta. Al pulsar GUARDAR Y ENVIAR, las respuestas se enviarán automáticamente.</p>
+      </section>
+
+      <div id="successMessage" class="success-message" data-i18n="successMessage">✓ Encuesta enviada correctamente. Gracias por ayudarnos a mejorar. MANHATTAN ABRASIVES.</div>
+
+      <div class="action-box">
+        <button type="button" class="pdf-button" onclick="generatePdf()" data-i18n="pdfButton">GUARDAR EN PDF</button>
+        <button type="button" class="pdf-button" onclick="exportExcel()">EXPORTAR XLSX</button><button type="submit" class="submit-button" data-i18n="submitButton">GUARDAR Y ENVIAR</button>
+      </div>
+    </form>
+
+    <footer class="footer-contact">
+      <h3>MANHATTAN ABRASIVES</h3>
+      <div>+34 945 256 400</div>
+      <div>📍 Larragana, 8, 01013 Vitoria-Gasteiz (España)</div>
+      <div>✉️ info@manhattanabrasives.com</div>
+    </footer>
+  </div>
+
+  <script>
+    const EMAIL_DESTINATION = "info@manhattanabrasives.com";
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mzdwnarw";
+
+    /*
+      Para envío real automático sin abrir el correo del cliente:
+      1. Cree un endpoint de servidor, por ejemplo: https://su-dominio.com/enviar-encuesta.php
+      2. Sustituya BACKEND_URL por esa dirección.
+      3. El servidor debe recibir JSON y enviar el correo a info@manhattanabrasives.com.
+    */
+    const BACKEND_URL = "";
+
+    const translations = {
+      es: {
+        mainTitle: "EVALUACIÓN DE SATISFACCIÓN DE CLIENTES",
+        dateLabel: "Fecha:",
+        timeLabel: "Hora:",
+        revisionLabel: "Revisión:",
+        ratingText: "Valoración: 1 = Muy insatisfecho | 2 = Insatisfecho | 3 = Neutral | 4 = Satisfecho | 5 = Muy satisfecho",
+        companyLabel: "Su empresa",
+        companyPlaceholder: "Nombre de su empresa",
+        qualityTitle: "CALIDAD DE PRODUCTO",
+        serviceTitle: "ATENCIÓN Y SERVICIO",
+        logisticsTitle: "LOGÍSTICA Y ENTREGAS",
+        experienceTitle: "EXPERIENCIA DEL CLIENTE",
+        loyaltyTitle: "FIDELIZACIÓN",
+        opinionTitle: "OPINIÓN DEL CLIENTE",
+        q1: "¿Cómo valora la calidad de nuestros productos abrasivos?",
+        q2: "¿Cómo valora el rendimiento y duración de los productos?",
+        q3: "¿Los productos cumplen sus expectativas técnicas?",
+        q4: "¿Cómo valora la relación calidad-precio?",
+        q5: "¿Cómo valora la atención comercial recibida?",
+        q6: "¿Cómo valora la asistencia técnica ofrecida?",
+        q7: "¿Cómo valora la rapidez de respuesta ante consultas?",
+        q8: "¿Cómo valora el servicio ofrecido en nuestra página web?",
+        q9: "¿Cómo valora nuestros plazos de entrega?",
+        q10: "¿Cómo valora la disponibilidad de stock?",
+        q11: "¿Los pedidos llegan completos y correctamente?",
+        q12: "¿Cómo valora la resolución de incidencias?",
+        q13: "¿Le resultó fácil realizar su pedido?",
+        q14: "¿La resolución de problemas fue rápida y sencilla?",
+        q15: "¿Su incidencia quedó resuelta en el primer contacto?",
+        q16: "¿Qué probabilidad hay de que recomiende MANHATTAN ABRASIVES a otra empresa?",
+        q17: "¿Continuará trabajando con ABRASIVOS MANHATTAN?",
+        q18: "¿Volvería a comprar nuestros productos?",
+        q19: "¿Qué productos o servicios adicionales le gustaría que ofreciéramos?",
+        q20: "Comentarios adicionales",
+        yes: "Sí",
+        probably: "Probablemente",
+        no: "No",
+        traceabilityTitle: "Trazabilidad ISO 9001",
+        instructionsTitle: "INSTRUCCIONES",
+        instructionsText: "Rellene el formulario. Puede pulsar GUARDAR EN PDF antes de enviar la encuesta. Al pulsar GUARDAR Y ENVIAR, las respuestas se enviarán automáticamente.",
+        pdfButton: "GUARDAR EN PDF",
+        submitButton: "GUARDAR Y ENVIAR",
+        successMessage: "✓ Encuesta enviada correctamente. Gracias por ayudarnos a mejorar. MANHATTAN ABRASIVES.",
+        pendingSend: "Pendiente de envío",
+        scoreTitle: "Índice de satisfacción global",
+        clientNameLabel: "Nombre del cliente",
+        signatureLabel: "Firma"
+      },
+      en: {
+        mainTitle: "CUSTOMER SATISFACTION SURVEY",
+        dateLabel: "Date:",
+        timeLabel: "Time:",
+        revisionLabel: "Revision:",
+        ratingText: "Rating: 1 = Very dissatisfied | 2 = Dissatisfied | 3 = Neutral | 4 = Satisfied | 5 = Very satisfied",
+        companyLabel: "Your company",
+        companyPlaceholder: "Your company name",
+        qualityTitle: "PRODUCT QUALITY",
+        serviceTitle: "ATTENTION AND SERVICE",
+        logisticsTitle: "LOGISTICS AND DELIVERIES",
+        experienceTitle: "CUSTOMER EXPERIENCE",
+        loyaltyTitle: "LOYALTY",
+        opinionTitle: "CUSTOMER OPINION",
+        q1: "How do you rate the quality of our abrasive products?",
+        q2: "How do you rate the performance and durability of the products?",
+        q3: "Do the products meet your technical expectations?",
+        q4: "How do you rate the value for money?",
+        q5: "How do you rate the commercial service received?",
+        q6: "How do you rate the technical assistance provided?",
+        q7: "How do you rate the speed of response to enquiries?",
+        q8: "How do you rate the service provided on our website?",
+        q9: "How do you rate our delivery times?",
+        q10: "How do you rate stock availability?",
+        q11: "Do orders arrive complete and correct?",
+        q12: "How do you rate the resolution of incidents?",
+        q13: "Was it easy for you to place your order?",
+        q14: "Was problem resolution quick and simple?",
+        q15: "Was your incident resolved at first contact?",
+        q16: "How likely are you to recommend MANHATTAN ABRASIVES to another company?",
+        q17: "Will you continue working with ABRASIVOS MANHATTAN?",
+        q18: "Would you buy our products again?",
+        q19: "What additional products or services would you like us to offer?",
+        q20: "Additional comments",
+        yes: "Yes",
+        probably: "Probably",
+        no: "No",
+        traceabilityTitle: "ISO 9001 traceability",
+        instructionsTitle: "INSTRUCTIONS",
+        instructionsText: "Fill in the form. You can press SAVE AS PDF before sending the survey. When you press SAVE AND SEND, the answers will be sent automatically.",
+        pdfButton: "SAVE AS PDF",
+        submitButton: "SAVE AND SEND",
+        successMessage: "Survey saved and prepared to send successfully. Thank you for your collaboration.",
+        pendingSend: "Pending submission",
+        scoreTitle: "Overall satisfaction score",
+        clientNameLabel: "Customer name",
+        signatureLabel: "Signature"
+      }
+    };
+
+    let currentLanguage = "es";
+function pad(number, size) {
+      let text = String(number);
+      while (text.length < size) text = "0" + text;
+      return text;
+    }
+function updateDateTime() {
+      const date = new Date();
+      const locale = currentLanguage === "es" ? "es-ES" : "en-GB";
+      document.getElementById("currentDate").textContent = date.toLocaleDateString(locale);
+      document.getElementById("currentTime").textContent = date.toLocaleTimeString(locale);
+    }
+
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach(function(element) {
+        const key = element.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(function(element) {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (translations[lang][key]) {
+          element.setAttribute("placeholder", translations[lang][key]);
+        }
+      });
+
+      document.getElementById("btn-es").classList.toggle("active", lang === "es");
+      document.getElementById("btn-en").classList.toggle("active", lang === "en");
+      updateDateTime();
+    }
+
+    function getSelectedValue(name) {
+      const selected = document.querySelector('input[name="' + name + '"]:checked');
+      return selected ? selected.value : "";
+    }
+
+    function getSurveyData() {
+      return {
+        date: document.getElementById("currentDate").textContent,
+        time: document.getElementById("currentTime").textContent,
+        company: document.getElementById("company").value,
+        quality_1: getSelectedValue("quality_1"),
+        quality_2: getSelectedValue("quality_2"),
+        quality_3: getSelectedValue("quality_3"),
+        quality_4: getSelectedValue("quality_4"),
+        sales_1: getSelectedValue("sales_1"),
+        sales_2: getSelectedValue("sales_2"),
+        sales_3: getSelectedValue("sales_3"),
+        sales_4: getSelectedValue("sales_4"),
+        logistics_1: getSelectedValue("logistics_1"),
+        logistics_2: getSelectedValue("logistics_2"),
+        logistics_3: getSelectedValue("logistics_3"),
+        logistics_4: getSelectedValue("logistics_4"),
+        experience_1: getSelectedValue("experience_1"),
+        experience_2: getSelectedValue("experience_2"),
+        experience_3: getSelectedValue("experience_3"),
+        loyalty_1: getSelectedValue("loyalty_1"),
+        loyalty_continue: getSelectedValue("loyalty_continue"),
+        loyalty_buy_again: getSelectedValue("loyalty_buy_again"),
+        additional_products: document.querySelector('textarea[name="additional_products"]').value,
+        comments: document.querySelector('textarea[name="comments"]').value,
+        satisfaction_score: document.getElementById("satisfactionScore") ? document.getElementById("satisfactionScore").textContent + "%" : "",
+        average_score: document.getElementById("averageScore") ? document.getElementById("averageScore").textContent + " / 5" : ""
+      };
+    }
+
+    function createEmailBody(data) {
+      return [
+        "MANHATTAN ABRASIVES - Encuesta de satisfacción",
+        "",
+        "Fecha: " + data.date,
+        "Hora: " + data.time,
+        "Su empresa: " + data.company,
+        "Índice satisfacción: " + data.satisfaction_score,
+        "Media: " + data.average_score,
+        "",
+        "CALIDAD DE PRODUCTO",
+        "1. Calidad productos abrasivos: " + data.quality_1,
+        "2. Rendimiento y duración: " + data.quality_2,
+        "3. Expectativas técnicas: " + data.quality_3,
+        "4. Relación calidad-precio: " + data.quality_4,
+        "",
+        "ATENCIÓN Y SERVICIO",
+        "5. Atención comercial: " + data.sales_1,
+        "6. Asistencia técnica: " + data.sales_2,
+        "7. Rapidez de respuesta: " + data.sales_3,
+        "8. Servicio web: " + data.sales_4,
+        "",
+        "LOGÍSTICA Y ENTREGAS",
+        "9. Plazos de entrega: " + data.logistics_1,
+        "10. Disponibilidad de stock: " + data.logistics_2,
+        "11. Pedidos completos y correctos: " + data.logistics_3,
+        "12. Resolución de incidencias: " + data.logistics_4,
+        "",
+        "EXPERIENCIA DEL CLIENTE",
+        "13. Facilidad para realizar pedido: " + data.experience_1,
+        "14. Resolución rápida y sencilla: " + data.experience_2,
+        "15. Resuelto en primer contacto: " + data.experience_3,
+        "",
+        "FIDELIZACIÓN",
+        "16. Recomendación: " + data.loyalty_1,
+        "17. Continuará trabajando: " + data.loyalty_continue,
+        "18. Volvería a comprar: " + data.loyalty_buy_again,
+        "",
+        "OPINIÓN DEL CLIENTE",
+        "Productos o servicios adicionales: " + data.additional_products,
+        "Comentarios adicionales: " + data.comments
+      ].join("\n");
+    }
+
+    function generatePdf() {
+      updateDateTime();
+      window.print();
+    }
+
+    async function sendSurvey(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("surveyForm");
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      updateDateTime();
+      if (typeof updateSatisfactionScore === "function") {
+        updateSatisfactionScore();
+      }
+
+      const data = typeof getSurveyData === "function" ? getSurveyData() : {};
+      const formData = new FormData(form);
+
+      formData.append("Fecha", document.getElementById("currentDate") ? document.getElementById("currentDate").textContent : "");
+      formData.append("Hora", document.getElementById("currentTime") ? document.getElementById("currentTime").textContent : "");
+      formData.append("Su empresa", document.getElementById("company") ? document.getElementById("company").value : "");
+
+      Object.keys(data).forEach(function(key) {
+        if (!formData.has(key)) {
+          formData.append(key, data[key]);
+        }
+      });
+
+      if (document.getElementById("satisfactionScore")) {
+        formData.append("Satisfacción global %", document.getElementById("satisfactionScore").textContent + "%");
+      }
+
+      if (document.getElementById("averageScore")) {
+        formData.append("Media sobre 5", document.getElementById("averageScore").textContent);
+      }
+
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          const message = document.getElementById("successMessage");
+          message.style.display = "block";
+          message.textContent = currentLanguage === "es"
+            ? "✓ Encuesta enviada correctamente. Gracias por ayudarnos a mejorar. MANHATTAN ABRASIVES."
+            : "✓ Survey sent successfully. Thank you for helping us improve. MANHATTAN ABRASIVES.";
+          message.scrollIntoView({ behavior: "smooth", block: "center" });
+          form.reset();
+          if (typeof updateProgressV5 === "function") updateProgressV5();
+          if (typeof updateProgress === "function") updateProgress();
+        } else {
+          alert(currentLanguage === "es"
+            ? "No se pudo enviar la encuesta. Revise la conexión e inténtelo de nuevo."
+            : "The survey could not be sent. Please check your connection and try again.");
+        }
+      } catch (error) {
+        alert(currentLanguage === "es"
+          ? "Error de conexión al enviar la encuesta."
+          : "Connection error while sending the survey.");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      setLanguage("es");
+      document.getElementById("surveyForm").addEventListener("submit", sendSurvey);
+    });
+  
+
+
+
+function getNumericRatingValues(){
+ const ratingNames=[
+  "quality_1","quality_2","quality_3","quality_4",
+  "sales_1","sales_2","sales_3","sales_4",
+  "logistics_1","logistics_2","logistics_3","logistics_4",
+  "experience_1","experience_2","experience_3"
+ ];
+ let values=[];
+ ratingNames.forEach(name=>{
+   const selected=document.querySelector('input[name="'+name+'"]:checked');
+   if(selected){ values.push(Number(selected.value)); }
+ });
+ return values;
+}
+
+function updateSatisfactionScore(){
+ const values=getNumericRatingValues();
+ const score=document.getElementById("satisfactionScore");
+ const average=document.getElementById("averageScore");
+ const stars=document.getElementById("scoreStars");
+ if(!score || !average || !stars) return;
+ if(values.length===0){
+   score.textContent="0";
+   average.textContent="0.0";
+   stars.textContent="☆☆☆☆☆";
+   return;
+ }
+ const avg=values.reduce((a,b)=>a+b,0)/values.length;
+ const pct=Math.round((avg/5)*100);
+ const roundedStars=Math.round(avg);
+ score.textContent=String(pct);
+ average.textContent=avg.toFixed(1);
+ stars.textContent="★".repeat(roundedStars)+"☆".repeat(5-roundedStars);
+}
+
+function updateProgressV5(){
+ const requiredGroups=[
+  "quality_1","quality_2","quality_3","quality_4",
+  "sales_1","sales_2","sales_3","sales_4",
+  "logistics_1","logistics_2","logistics_3","logistics_4",
+  "experience_1","experience_2","experience_3",
+  "loyalty_1","loyalty_continue","loyalty_buy_again"
+ ];
+ let done=0;
+ requiredGroups.forEach(g=>{ if(document.querySelector('input[name="'+g+'"]:checked')) done++; });
+ if(document.getElementById("company") && document.getElementById("company").value.trim()) done++;
+ const total=requiredGroups.length+1;
+ const pct=Math.round((done/total)*100);
+ const bar=document.getElementById("progressBar");
+ const txt=document.getElementById("progressPercent");
+ if(bar){bar.style.width=pct+"%";}
+ if(txt){txt.textContent=pct+"%";}
+ updateSatisfactionScore();
+}
+
+function exportExcel(){
+ if (typeof XLSX === "undefined") {
+   alert("No se pudo cargar la librería XLSX. Abra el archivo con conexión a internet.");
+   return;
+ }
+
+ updateDateTime();
+ updateSatisfactionScore();
+
+ const get = (name) => {
+   const selected = document.querySelector('input[name="'+name+'"]:checked');
+   return selected ? selected.value : "";
+ };
+
+ const row = {
+   "Fecha": document.getElementById("currentDate") ? document.getElementById("currentDate").textContent : "",
+   "Hora": document.getElementById("currentTime") ? document.getElementById("currentTime").textContent : "",
+   "Su empresa": document.getElementById("company") ? document.getElementById("company").value : "",
+
+   "Calidad media /5": "",
+   "Calidad %": "",
+   "Servicio media /5": "",
+   "Servicio %": "",
+   "Logística media /5": "",
+   "Logística %": "",
+   "Experiencia media /5": "",
+   "Experiencia %": "",
+   "Satisfacción global /5": "",
+   "Satisfacción global %": "",
+
+   "Calidad productos abrasivos": Number(get("quality_1")) || "",
+   "Rendimiento y duración": Number(get("quality_2")) || "",
+   "Cumple expectativas técnicas": Number(get("quality_3")) || "",
+   "Relación calidad-precio": Number(get("quality_4")) || "",
+
+   "Atención comercial": Number(get("sales_1")) || "",
+   "Asistencia técnica": Number(get("sales_2")) || "",
+   "Rapidez de respuesta": Number(get("sales_3")) || "",
+   "Servicio página web": Number(get("sales_4")) || "",
+
+   "Plazos de entrega": Number(get("logistics_1")) || "",
+   "Disponibilidad de stock": Number(get("logistics_2")) || "",
+   "Pedidos completos y correctos": Number(get("logistics_3")) || "",
+   "Resolución de incidencias": Number(get("logistics_4")) || "",
+
+   "Facilidad para realizar pedido": Number(get("experience_1")) || "",
+   "Resolución rápida y sencilla": Number(get("experience_2")) || "",
+   "Resuelto en primer contacto": Number(get("experience_3")) || "",
+
+   "NPS / Recomendación": Number(get("loyalty_1")) || "",
+   "Continuará trabajando": get("loyalty_continue"),
+   "Volvería a comprar": get("loyalty_buy_again"),
+
+   "Productos o servicios adicionales": document.querySelector('textarea[name="additional_products"]') ? document.querySelector('textarea[name="additional_products"]').value : "",
+   "Comentarios adicionales": document.querySelector('textarea[name="comments"]') ? document.querySelector('textarea[name="comments"]').value : ""
+ };
+
+ const workbook = XLSX.utils.book_new();
+ const respuestas = XLSX.utils.json_to_sheet([row]);
+
+ // Fórmulas reales de Excel en la fila 2.
+ // Columnas:
+ // A Fecha | B Hora | C Empresa
+ // D Calidad media | E Calidad %
+ // F Servicio media | G Servicio %
+ // H Logística media | I Logística %
+ // J Experiencia media | K Experiencia %
+ // L Global media | M Global %
+ // N-Q Calidad | R-U Servicio | V-Y Logística | Z-AB Experiencia
+ respuestas["D2"] = { t: "n", f: "AVERAGE(N2:Q2)" };
+ respuestas["E2"] = { t: "n", f: "D2/5", z: "0%" };
+
+ respuestas["F2"] = { t: "n", f: "AVERAGE(R2:U2)" };
+ respuestas["G2"] = { t: "n", f: "F2/5", z: "0%" };
+
+ respuestas["H2"] = { t: "n", f: "AVERAGE(V2:Y2)" };
+ respuestas["I2"] = { t: "n", f: "H2/5", z: "0%" };
+
+ respuestas["J2"] = { t: "n", f: "AVERAGE(Z2:AB2)" };
+ respuestas["K2"] = { t: "n", f: "J2/5", z: "0%" };
+
+ respuestas["L2"] = { t: "n", f: "AVERAGE(N2:AB2)" };
+ respuestas["M2"] = { t: "n", f: "L2/5", z: "0%" };
+
+ respuestas["!cols"] = Object.keys(row).map(k => ({wch: Math.min(Math.max(k.length + 4, 14), 42)}));
+ XLSX.utils.book_append_sheet(workbook, respuestas, "Respuestas");
+
+ const resumen = XLSX.utils.aoa_to_sheet([
+   ["Indicador", "Resultado"],
+   ["Fecha", { f: "Respuestas!A2" }],
+   ["Hora", { f: "Respuestas!B2" }],
+   ["Su empresa", { f: "Respuestas!C2" }],
+   ["Calidad media /5", { f: "Respuestas!D2" }],
+   ["Calidad %", { f: "Respuestas!E2" }],
+   ["Servicio media /5", { f: "Respuestas!F2" }],
+   ["Servicio %", { f: "Respuestas!G2" }],
+   ["Logística media /5", { f: "Respuestas!H2" }],
+   ["Logística %", { f: "Respuestas!I2" }],
+   ["Experiencia media /5", { f: "Respuestas!J2" }],
+   ["Experiencia %", { f: "Respuestas!K2" }],
+   ["Satisfacción global /5", { f: "Respuestas!L2" }],
+   ["Satisfacción global %", { f: "Respuestas!M2" }],
+   ["NPS / Recomendación", { f: "Respuestas!AC2" }],
+   ["Continuará trabajando", { f: "Respuestas!AD2" }],
+   ["Volvería a comprar", { f: "Respuestas!AE2" }]
+ ]);
+
+ resumen["B6"].z = "0%";
+ resumen["B8"].z = "0%";
+ resumen["B10"].z = "0%";
+ resumen["B12"].z = "0%";
+ resumen["B14"].z = "0%";
+
+ resumen["!cols"] = [{wch:30},{wch:40}];
+ XLSX.utils.book_append_sheet(workbook, resumen, "Resumen con fórmulas");
+
+ XLSX.writeFile(workbook, "Encuesta_Manhattan_2026_v8_resultados_con_formulas.xlsx");
+}
+
+document.addEventListener("input", updateProgressV5);
+document.addEventListener("change", updateProgressV5);
+document.addEventListener("DOMContentLoaded", function(){
+ setTimeout(updateProgressV5,300);
+});
+
+</script>
+
+
+</body></html>
