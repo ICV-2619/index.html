@@ -1045,45 +1045,62 @@ function exportExcel(){
    ["Continuará trabajando", { f: "Respuestas!AD2" }],
    ["Volvería a comprar", { f: "Respuestas!AE2" }]
  ]);
-
 let resumen = XLSX.utils.aoa_to_sheet(resumenData);
-   resumen["!cols"] = [{wch:30},{wch:40}];
-   XLSX.utils.book_append_sheet(workbook, resumenSheet, "Resumen");
+resumen["!cols"] = [{ wch: 30 }, { wch: 40 }];
+XLSX.utils.book_append_sheet(workbook, resumenSheet, "Resumen");
 
-   XLSX.writeFile(workbook, "Encuesta_Manhattan_2026_v9_resultados.xlsx");
-   return;
- }
+XLSX.writeFile(workbook, "Encuesta_Manhattan_2026_v9_resultados.xlsx");
+return;
+
 const row = {
-  "Fecha": document.getElementById("currentDate") ? document.getElementById("currentDate").textContent : "",
-  "Hora": document.getElementById("currentTime") ? document.getElementById("currentTime").textContent : "",
-  "Su empresa": document.getElementById("company") ? document.getElementById("company").value : "",
-  "Satisfacción global %": document.getElementById("satisfactionScore") ? document.getElementById("satisfactionScore").textContent + "%" : "",
-  "Media sobre 5": document.getElementById("averageScore") ? document.getElementById("averageScore").textContent : ""
+    "Fecha": document.getElementById("currentDate")
+        ? document.getElementById("currentDate").textContent
+        : "",
+
+    "Hora": document.getElementById("currentTime")
+        ? document.getElementById("currentTime").textContent
+        : "",
+
+    "Su empresa": document.getElementById("company")
+        ? document.getElementById("company").value
+        : "",
+
+    "Satisfacción global": document.getElementById("satisfactionScore")
+        ? document.getElementById("satisfactionScore").textContent
+        : "",
+
+    "Media sobre 5": document.getElementById("averageScore")
+        ? document.getElementById("averageScore").textContent
+        : ""
 };
- const headers = Object.keys(row);
- const values = headers.map(h => row[h]);
- const csv = [
-   headers.map(v => '"' + String(v).replace(/"/g,'""') + '"').join(";"),
-   values.map(v => '"' + String(v).replace(/"/g,'""') + '"').join(";")
- ].join("\\n");
 
- const blob = new Blob(["\\ufeff" + csv], {type: "text/csv;charset=utf-8;"});
- const a = document.createElement("a");
- a.href = URL.createObjectURL(blob);
- a.download = "Encuesta_Manhattan_2026_v9_resultados.csv";
- a.click();
+const headers = Object.keys(row);
+const values = headers.map(h => row[h]);
 
- alert(currentLanguage === "es"
-   ? "No se pudo cargar XLSX. Se ha exportado un CSV compatible con Excel."
-   : "XLSX could not be loaded. A CSV compatible with Excel has been exported.");
+const csv = [
+    headers.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(";"),
+    values.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(";")
+].join("\n");
+
+const blob = new Blob(
+    ['\uFEFF' + csv],
+    { type: 'text/csv;charset=utf-8;' }
+);
+
+const a = document.createElement("a");
+a.href = URL.createObjectURL(blob);
+a.download = "Encuesta_Manhattan_2026_v9_resultados.csv";
+a.click();
+
+alert(
+    currentLanguage === "es"
+        ? "No se pudo cargar XLSX. Se ha exportado un CSV compatible con Excel."
+        : "XLSX could not be loaded. A CSV compatible with Excel has been exported."
+);
 
 document.addEventListener("input", updateProgressV5);
 document.addEventListener("change", updateProgressV5);
-document.addEventListener("DOMContentLoaded", function(){
- setTimeout(updateProgressV5,300);
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(updateProgressV5, 300);
 });
-
-</script>
-
-
-</body></html>
