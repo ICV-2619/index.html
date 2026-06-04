@@ -1053,7 +1053,13 @@ let resumen = XLSX.utils.aoa_to_sheet(resumenData);
    XLSX.writeFile(workbook, "Encuesta_Manhattan_2026_v9_resultados.xlsx");
    return;
  }
-
+const row = {
+  "Fecha": document.getElementById("currentDate") ? document.getElementById("currentDate").textContent : "",
+  "Hora": document.getElementById("currentTime") ? document.getElementById("currentTime").textContent : "",
+  "Su empresa": document.getElementById("company") ? document.getElementById("company").value : "",
+  "Satisfacción global %": document.getElementById("satisfactionScore") ? document.getElementById("satisfactionScore").textContent + "%" : "",
+  "Media sobre 5": document.getElementById("averageScore") ? document.getElementById("averageScore").textContent : ""
+};
  const headers = Object.keys(row);
  const values = headers.map(h => row[h]);
  const csv = [
