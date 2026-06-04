@@ -1046,16 +1046,30 @@ function exportExcel(){
    ["Volvería a comprar", { f: "Respuestas!AE2" }]
  ]);
 
- resumen["B6"].z = "0%";
- resumen["B8"].z = "0%";
- resumen["B10"].z = "0%";
- resumen["B12"].z = "0%";
- resumen["B14"].z = "0%";
+const resumen = XLSX.utils.aoa_to_sheet(resumenData);
+   resumen["!cols"] = [{wch:30},{wch:40}];
+   XLSX.utils.book_append_sheet(workbook, resumen, "Resumen");
 
- resumen["!cols"] = [{wch:30},{wch:40}];
- XLSX.utils.book_append_sheet(workbook, resumen, "Resumen con fórmulas");
+   XLSX.writeFile(workbook, "Encuesta_Manhattan_2026_v10_resultados.xlsx");
+   return;
+ }
 
- XLSX.writeFile(workbook, "Encuesta_Manhattan_2026_v8_resultados_con_formulas.xlsx");
+ const headers = Object.keys(row);
+ const values = headers.map(h => row[h]);
+ const csv = [
+   headers.map(v => '"' + String(v).replace(/"/g,'""') + '"').join(";"),
+   values.map(v => '"' + String(v).replace(/"/g,'""') + '"').join(";")
+ ].join("\\n");
+
+ const blob = new Blob(["\\ufeff" + csv], {type: "text/csv;charset=utf-8;"});
+ const a = document.createElement("a");
+ a.href = URL.createObjectURL(blob);
+ a.download = "Encuesta_Manhattan_2026_v10_resultados.csv";
+ a.click();
+
+ alert(currentLanguage === "es"
+   ? "No se pudo cargar XLSX. Se ha exportado un CSV compatible con Excel."
+   : "XLSX could not be loaded. A CSV compatible with Excel has been exported.");
 }
 
 document.addEventListener("input", updateProgressV5);
